@@ -18,24 +18,24 @@ theme_settings:
 
   # Icons
   rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: benartw86@gmail.com
   behance:
   bitbucket:
   dribbble:
   facebook:
   flickr:
-  github: # github profile name, e.g. "madebymunsters"
+  github: benartw86
   google_plus:
   instagram:
-  linkedin:  # Full URL
+  linkedin: https://www.linkedin.com/in/benjamin-white-5527b03b
   pinterest:
   reddit:
   soundcloud:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter:
-  wordpress:
+  twitter: @SoyBAW86
+  wordpress: https://srblancoblog.wordpress.com/
   youtube:
 
   # Scripts
