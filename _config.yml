@@ -1,17 +1,17 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/ (optional)
-url: "http://www.your-domain.com" # the base hostname & protocol for your site
+url: "http://www.webenart.com" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Tyrion Lannister # Your name will go here
+  title: Benjamin White # Your name will go here
   description: "A personal portfolio and blog website" # used by search engines
 
   # Header and footer text
   header_text: >
-     <h1>Witty & Hilarious Rails Developer</h1>
-     <p>I'm a kickass developer specializing in Rails, AngularJS, and MongoDB.</p>
+     <h1>Web Development with a focus on best practices.</h1>
+     <p>Bringing a creative and innovative application to life with Javascript and Ruby on the Rails.</p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="http://jekyllrb.com">Jekyll</a> and made with love.
@@ -35,7 +35,7 @@ theme_settings:
   steam:
   tumblr:
   twitter: SoyBAW86
-  wordpress: https://srblancoblog.wordpress.com/
+  wordpress: srblancoblog
   youtube:
 
   # Scripts
