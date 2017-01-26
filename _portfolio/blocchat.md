@@ -40,3 +40,28 @@ to the site, the ui-router will reference the home as the first state.
     };
 });
 {% endhighlight %}
+
+Firebase is being used as a database for the chat rooms and the messages.  The $firebaseArray will be used to store the chat rooms and messages.  A factory is used as a service to provide acces
+to the array.  This factory service "Room" is injected into the controller "HomeCtrl" to add functionality to the homepage template.  I use the ngRepeat directive to iterate through the collection of rooms
+in the home template.  This produces a list of room names from the firebase database.  
+
+See the Room Service Below:
+
+{% highlight javascript %}     
+
+(function() {
+  function Room($firebaseArray) {
+    var ref = firebase.database().ref().child("rooms");
+    var rooms = $firebaseArray(ref);
+
+    return {
+      all: rooms
+    };
+  }
+
+  angular
+    .module('blocChat')
+    .factory('Room', ['$firebaseArray', Room]);
+})();
+
+{% endhighlight %}
