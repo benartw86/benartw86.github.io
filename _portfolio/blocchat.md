@@ -1,7 +1,11 @@
+---
+
 layout: post
 title: Bloc Chat
 thumbnail-path: 
-short-description:  Bloc Chat is an application for instant messaging.  
+short-description:  Bloc Chat is an application for instant messaging. 
+
+---
 
 Bloc Chat, stage 1:  Today I defined the Angular module for the application and included ui.router and firebase as dependencies.  This project will be using AngularFire.  
 This will provide 3 way data binding between the HTML, Javascript and the Firebase database in my application.  
