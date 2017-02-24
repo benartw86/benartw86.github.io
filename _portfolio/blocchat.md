@@ -16,7 +16,7 @@ This will provide 3 way data binding between the HTML, Javascript and the Fireba
 The code below defines the module for the application.  I also have defined a state named 'home'.  This state will provide the view for the index.  When a use first navigates
 to the site, the ui-router will reference the home as the first state.  
 
-{% highlight javascript %}                     
+{% highlight js %}                     
 
 (function() {
     config($stateProvider, $locationProvider) {
@@ -51,7 +51,7 @@ in the home template.  This produces a list of room names from the firebase data
 
 See the Room Service Below:
 
-{% highlight javascript %}     
+{% highlight js %}     
 
 (function() {
   function Room($firebaseArray) {
@@ -79,7 +79,9 @@ be added to the factory recipe.
 Making a modal
 
 To make a modal, which is essentially a pop-up window, you need a few things.  For starters there needs to be a button that, once clicked, will open your modal.  In the Bloc Chat application, 
-I want users to be able to create and name their own chat rooms.  The modal will be used to house this functionality.  
+I want users to be able to create and name their own chat rooms.  The modal will be used to house this functionality. 
+
+{% highlight js %}
 
 <div class="chat-side-bar">
     <h1>Bloc Chat</h1>  
@@ -93,10 +95,12 @@ I want users to be able to create and name their own chat rooms.  The modal will
     
     </div>
     
+ {% endhighlight %}
+    
     The button used to open the modal utilizes the ngClick directive.  To bind a scope to the button, I create a controller, HomeCtrl.js.  With the service "Room" injected,
     along with the "$uibModal" service, the controller lets the user see the array of rooms and open a the modal:
     
-    {% Highlight JS %}
+    {% highlight js %}
     
     (function() {
     function HomeCtrl(Room, $uibModal) {  //inject the room service in order to assign the array of objects retrieved by "all" method
@@ -113,7 +117,7 @@ I want users to be able to create and name their own chat rooms.  The modal will
     }; 
         
   }
-{% End Highlight %}
+{% endhighlight %}
 
 How do I create Room objects with AngularFire?*  
 
@@ -130,7 +134,7 @@ How can I display an individual room's content?*  create a 2 way binding between
 Create a global object "this.room" in HomeCrtl that stores the currently active chat room.  Set that object to null, making it empty.  In the view (home.html), add directive to chat room list.  This directive will store the room as an object "room.name".  The click will set off the function "home.storeRoomName" which is a method to store the room clicked on as "room.name".  The room.name is two way binded using curly braces and passed as an argument to the home.storeRoomName method.  This method makes the object available globally.  The object can then be called in a new div using curly braces.  To reference the object we use "home.room.name".
 
 
-{% Highlight JS %}
+{% highlight js %}
 
 this.room = null;
 
@@ -151,7 +155,7 @@ this.room = null;
     
 </div>  
 
-{% End Highlight %}
+{% endhighlight %}
 
 How can I query messages for an active room?*
 Using the child() method on the $firebaseArray service again, query messages instead of rooms this time. To get the messages for a given room, you need to chain the child() method with Firebase's orderByChild()1 method, targeting the roomId child.
@@ -165,7 +169,7 @@ A username is a string identifying a user. A common way to store a string in you
 
 I need to require new users to enter a username before they can access the chat application.  Because of this I include a ".run()" method that runs code when the app instance is created. Using a .run() block I make sure that a username is set at the time the app is initialized.  The $cookies service is injected into the run block's dependencies to check for the presence of the cookie holding the username.  Upon arriving, the application will open a modal, if there is no current user.  I used the $cookies.get() method to check if the cookie exists for a user.  
 
-{% Highlight JS %}
+{% highlight js %}
 
 (function() {
   function BlocChatCookies($cookies, $uibModal) {
@@ -187,12 +191,12 @@ I need to require new users to enter a username before they can access the chat 
     .run(['$cookies', '$uibModal', BlocChatCookies]);
 })();
 
-{% End Highlight %}
+{% endhighlight %}
 
 
 To add functionality to the modal, I created a controller to house two methods.  The first is used to set a new username.  When the user enters text into the input field of the modal, the text will become the cookie for the blocChatCurrentUser.  Another method is used to close the modal.  The modal will only be dismissed if a current user exists.  The "if" statment in "this.ok" checks with a boolean to see if the cookie exists.   
 
-{% Highlight JS %}
+{% highlight js %}
 
 (function() {
     function SetUsernameCtrl($cookies, $uibModalInstance) { 
@@ -218,11 +222,11 @@ angular
   .controller('SetUsernameCtrl', ['$cookies' , '$uibModalInstance', SetUsernameCtrl]);
 })();
 
-{% End Highlight %}    
+{% endhighlight %}    
 
 The controller gives us the modal its interactivity.  Using the ngClick directive, the buttons "Add" and "ok" enable the user to close the modal and add a username.  The text entered into the placeholder is passed to the "setUsername" method to check if the cookie exists.  
 
-{% Highlight JS %}
+{% highlight js %}
 
 div class="modal-content">
   <div class="modal-header">
@@ -238,7 +242,7 @@ div class="modal-content">
     </div> 
 </div>
     
-{% End Highlight %}    
+{% endhighlight %}    
 
 
 How can I send messages?*
