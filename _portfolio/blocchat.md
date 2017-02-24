@@ -11,7 +11,7 @@ Bloc Chat, stage 1:  Today I defined the Angular module for the application and 
 This will provide 3 way data binding between the HTML, Javascript and the Firebase database in my application.  
 
 {:.center}
-![]({{ site.baseurl }}/img/blocflix.png)  //to display images
+![]({{ site.baseurl }}/img/)  //to display images
 
 The code below defines the module for the application.  I also have defined a state named 'home'.  This state will provide the view for the index.  When a use first navigates
 to the site, the ui-router will reference the home as the first state.  
