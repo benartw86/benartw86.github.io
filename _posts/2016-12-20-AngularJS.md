@@ -18,6 +18,18 @@ CRUD lends itself to the **Single Page Application** paradigm wherein the entire
 
 Angular also uses the Model-View-Controller concept with two way binding.  As a result, user interactions with the view on the website change the HTML dynamically through the use of controllers.  This in turn changes the model.  Changes to the view are made in real time.
 
+## Other Posts by Ben
+
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+
 
 
 
