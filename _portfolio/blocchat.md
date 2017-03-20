@@ -3,7 +3,7 @@
 layout: post
 title: Bloc Chat
 thumbnail-path: 
-short-description:  Bloc Chat is an application for instant messaging. 
+short-description:  Bloc Chat is an application for instant messaging.
 
 ---
 
