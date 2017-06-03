@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Blocjams
+title: BlocJams
 thumbnail-path: "img/bloc_jams_logo.png"
-short-description: BlocFlix is a web application for storing albums and playing music.
+short-description: BlocJams is a web application for storing albums and playing music.
 
 ---
 
@@ -11,9 +11,10 @@ short-description: BlocFlix is a web application for storing albums and playing 
 
 ## Explanation
 
-
+Ruby on the Rails Application for practice with fundamentals of Model View Controller (MVC) framework. 
 
 ## Problem
+
 
 
 ## Solution
